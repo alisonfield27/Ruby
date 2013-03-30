@@ -1,0 +1,23 @@
+development:
+ adapter: postgresql
+ database: coursges_development
+ pool: 5
+ timeout: 5000
+ username: postgres
+ password: climbh
+
+test:
+ adapter: postgresql
+ database: coursges_test
+ pool: 5
+ timeout: 5000
+ username: postgres
+ password: climbh
+
+production:
+ adapter: postgresql
+ database: coursges_production
+ pool: 5
+ timeout: 5000
+ username: postgres
+ password: climbh

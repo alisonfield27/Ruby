@@ -1,0 +1,23 @@
+﻿<h1>Our Current Courses</h1>
+
+<br/>
+
+<table class ="table table-bordered">
+		<thead>
+		<tr>
+			<td><h5>Code</h5></td>
+			<td><h5>Title</h5></td>
+			<td><h5>Description</h5></td>
+			<td><h5>Start Date</h5></td>
+		</tr>
+		<thead>
+		<% @courses.each do |course| %>
+		<tr>
+			<td><%= course.code %></td>
+			<td><%= course.title %></td>
+			<td><%= course.description %></td>
+			<td><%= course.start_date %></td>
+		</tr>
+		<% end %>
+</table>
+

@@ -1,0 +1,19 @@
+﻿<h1>Current Applications</h1>
+<br/>
+	<table>
+		<% @applicants.each do |applicant| %>
+		<tr>
+			<td><%= applicant.firstname %></td>
+			<td><%= applicant.lastname %></td>
+			<td><%= applicant.phone_number %></td>
+			<td><%= applicant.email %></td>
+			<td><%= applicant.course_code %></td>
+			<td><%= link_to 'Show', applicant %></td>
+		</tr>
+		<% end %>
+	</table>
+<br />
+	
+
+
+

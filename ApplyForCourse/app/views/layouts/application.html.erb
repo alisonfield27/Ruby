@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>ApplyForCourse</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+   
+  <link href="../assets/css/bootstrap.css" rel=stylesheet">
+  <style type="text/css">
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+  </style>
+    
+</head>
+<body>
+
+	<div id ='header'>
+	</div>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" href="#">ApplyForCourse</a>
+			<ul class="nav">
+			<li><a href="/index.html">Home</a></li>
+			<% if user_signed_in? %>
+				<% if current_user.email == "admin@mail.com" %>
+			<li><a href="/courses.html">Courses</a></li>
+			<% end %>
+			<% end %>
+			<% if user_signed_in? %>
+				<% if current_user.email == "admin@mail.com" %>
+			<li><a href="/applicants.html">Applicants</a></li>
+			<% end %>
+			<% end %>
+			<li><a href="/browse.html">Courses on Offer </a></li>
+			<li><a href="/applicants/new.html">Apply Now</a></li>
+			<li><a href="/logout">Logout</a></li>
+			</ul>
+		</div>	
+		</div>
+		
+		<% if flash[:notice]%>
+		<p class="notice" style="color: green;"><flash[:notice]%></p>
+		<%end%>		
+		<div id='content'>	
+			<%= yield %>
+		</div>
+		
+			<form class ="navbar-form pull-right">
+				<% if user_signed_in? %>
+				<div>Signed in as ... <%=current_user.email %><%= link_to "Sign Out", destroy_user_session_path, :method => :delete%></div>
+				<% else %>
+				<%=link_to 'Register', new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
+				<% end %>
+			</form>	
+		
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<%= form_for @applicant do |f| %>
+  <% if @applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% @applicant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+	<fieldset>
+		<%= f.label :firstname %>
+		<%= f.text_field :firstname %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :lastname %>
+		<%= f.text_field :lastname %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</fieldset>
+	<fieldset>
+		<%= f.label :phone %>
+		<%= f.text_field :phone_number %>
+	</fieldset>	
+	<fieldset>
+	<%= f.label :course %> 
+	<%= f.text_field :course %>
+	</fieldset>	
+	<div class="actions">
+		<%= f.submit %>
+	</div>	
+	<% end %>
